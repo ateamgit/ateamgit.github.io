@@ -1,0 +1,32 @@
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+    <div class="magic-layout" data-cols="4">
+        <div class="panel panel-default magic-element width-full">
+            <div class="panel-heading">
+                <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                <h3 class="panel-title">Сценарии</h3>
+            </div><!-- /panel-heading -->
+            <div class="table-responsive">
+                <table class="table table-hover datatables">
+                    <thead>
+                        <tr>
+                            <th>Название сценария</th>
+                            <th>Кол-во звонков</th>
+                            <th></th>
+                            <th>Визуализация сценария</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="scrp in vm.scriptList">
+                            <td>{{scrp.name}}</td>
+                            <td class="center">{{scrp.cnt}}</td>
+                            <td class="center"><a ng-href="#scriptcall/{{scrp.id}}">Звонок</a></td>
+                            <td class="center">Смотреть</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div><!-- /panel -->
+
+    </div><!-- /magic-layout -->
+</section>

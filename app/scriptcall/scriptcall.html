@@ -1,0 +1,62 @@
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="ScriptCall as vm">
+    <div class="magic-layout" data-cols="2">
+
+        <div class="panel panel-default magic-element width-full">
+            <div class="panel-heading">
+                <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
+                <h3 class="panel-title">Звонок</h3>
+                <b>Сценарий: </b>"{{vm.name}}"
+                <b>Звонок: </b>{{vm.callCount}}
+            </div>
+        </div>
+
+        <div class="box magic-element col-md-6">
+            <form role="form">
+                <div class="form-group">
+                    <div ng-bind-html="vm.selectedHtml"></div>
+                </div>
+                <div class="input-group">
+                    <div class="radio-line" ng-repeat="w in vm.selectedOption.way">
+                        <input class="iCheck" name="iradio4" data-skin="line" data-color="blue" type="radio">
+                        <label>{{w}}</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="box magic-element col-md-6">
+            <form role="form">
+                <div class="list-group">
+                    <a ng-click="vm.selectOption(opt)" class="list-group-item" ng-repeat="opt in vm.selectedOption.options">
+                        <p class="list-group-item-text">{{opt.name}}</p>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <div class="box magic-element col-md-6">
+            <form role="form">
+                <div class="form-group">
+                    <textarea rows="3" class="form-control" id="inputTextarea"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class="box magic-element col-md-6">
+            <form role="form">
+                <div class="controls">
+                    <button type="submit" class="btn btn-success btn-ion">OK )</button>
+                    <button type="submit" class="btn btn-danger btn-ion">NO (</button>
+                    <button type="submit" class="btn btn btn-warning btn-ion">X</button>
+                    <button type="submit" class="btn btn-info btn-ion">???</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $('.magic-layout').each(function () {
+            updateMagic($(this));
+        });
+    </script>
+</section>
