@@ -73,15 +73,15 @@
                     <ul>
                         <li class="side-nav-item active">
                             <a href="#">
-                                <i class="nav-item-icon icon ion-social-rss-outline"></i>
-                                Сценарий
+                                <i class="nav-item-icon icon ion-ios7-film-outline"></i>
+                                Сценарии
                             </a>
                         </li>
 <!-- /Сценарий -->
                         <li class="side-nav-item">
                             <a href="#scriptlog">
                                 <span class="badge">3</span>
-                                <i class="nav-item-icon icon ion-ios7-email-outline"></i>
+                                <i class="nav-item-icon icon ion-ios7-telephone-outline"></i>
                                 Звонки
                             </a>
                         </li>
@@ -306,11 +306,11 @@
     </section><!-- /wrapper -->
 
     <!-- Vendor Scripts -->
-    <script src="scripts/jquery-2.1.1.js"></script>
-    <script src="scripts/angular.js"></script>
-    <script src="scripts/angular-animate.js"></script>
-    <script src="scripts/angular-route.js"></script>
-    <script src="scripts/angular-sanitize.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
     <script src="scripts/bootstrap.js"></script>
     <script src="scripts/toastr.js"></script>
     <script src="scripts/moment.js"></script>
@@ -371,74 +371,12 @@
 
 
       <script type="text/javascript">
-          // checkbox and radio with iCheck
-          // Initialize all components iCheck
           function reCheck() {
-              $('.iCheck').each(function () {
-                  // var each element .iCheck
-                  var $this = $(this),
-                      skin = $this.attr('data-skin'),
-                      color = $this.attr('data-color'),
-                      checkbox, radio, insert = '';
-
-                  /**
-                   * default usage skin
-                   * 
-                   * Skins options:
-                   * @data-skin minimalis
-                   * @data-skin square
-                   * @data-skin flat
-                   * @data-skin line
-                   * @data-skin polaris
-                   * @data-skin futurico
-                   */
-                  if (skin === undefined) {
-                      checkbox = 'icheckbox_minimal';
-                      radio = 'iradio_minimal';
-                  } else {
-                      checkbox = 'icheckbox_' + skin;
-                      radio = 'iradio_' + skin;
-                  }
-
-                  /**
-                   * default usage color
-                   * 
-                   * Available colors:
-                   * @data-color black
-                   * @data-color red
-                   * @data-color green
-                   * @data-color blue
-                   * @data-color aero
-                   * @data-color grey
-                   * @data-color orange
-                   * @data-color yellow
-                   * @data-color pink
-                   * @data-color purple
-                   */
-                  if (color !== undefined) {
-                      checkbox = checkbox + '-' + color;
-                      radio = radio + '-' + color;
-                  }
-
-                  // handle iCheck skin 'line'
-                  if (skin == 'line') {
-                      var label = $this.next(),
-                          label_text = label.text();
-
-                      insert = '<div class="icheck_line-icon"></div>' + label_text;
-                      label.remove();
-                  }
-
-                  // initialize
-                  $this.iCheck({
-                      checkboxClass: checkbox,
-                      radioClass: radio,
-                      insert: insert,
-                      increaseArea: '20%' // optional
-                  });
+              $('.msgTheme').iCheck({
+                  checkboxClass: 'icheckbox_flat-blue',
+                  radioClass: 'iradio_flat-blue'
               });
           }
-// end iCheck
           
           $(function() {
 
