@@ -41,7 +41,7 @@
         }
 
         function loadScript(data) {
-            var strs = data.split("\r");
+            var strs = data.split("\n");
             var list = [];
             var index = [];
             var script = {};
