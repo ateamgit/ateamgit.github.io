@@ -1,11 +1,11 @@
 ﻿[
 {
-"id":"p1",
+"callId":"p1",
 "uri":"project/test/test.md",
 "name":"Тестовый прокет 1"
 },
 {
-"id":"p2",
+"callId":"p2",
 "uri":"project/test/test.md",
 "name":"Тестовый прокет 2"
 }
