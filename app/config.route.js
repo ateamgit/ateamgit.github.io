@@ -40,6 +40,16 @@
                     }
                 }
             }, {
+                url: '/scriptview/:callId',
+                config: {
+                    title: 'scriptview',
+                    templateUrl: 'app/scriptview/scriptview.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
                 url: '/scriptlog',
                 config: {
                     title: 'admin',
