@@ -80,7 +80,7 @@
 <!-- /Сценарий -->
                         <li class="side-nav-item">
                             <a href="#scriptlog">
-                                <span class="badge">3</span>
+                                <span id="navCallCount" class="badge">0</span>
                                 <i class="nav-item-icon icon ion-ios7-telephone-outline"></i>
                                 Звонки
                             </a>
@@ -524,7 +524,6 @@
 
           function updateMagic(t) {
               var $container = t;
-              var parent = $container.parent();
               var dataCol = $container.attr('data-cols');
               var viewport = $.viewportW();
               var cols, masonry;

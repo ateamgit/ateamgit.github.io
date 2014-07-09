@@ -5,8 +5,8 @@
             <div class="panel-heading">
                 <div class="panel-icon"><i class="icon ion-ios7-photos-outline"></i></div>
                 <h3 class="panel-title">Звонок</h3>
-                <b>Сценарий: </b>"{{vm.name}}"
-                <b>Звонок: </b>{{vm.callCount}}
+                <b>Сценарий: </b>"{{vm.currentCall.name}}"
+                <b>Звонок: </b>{{vm.currentCall.callCount}}
             </div>
         </div>
 
@@ -16,9 +16,10 @@
                     <div ng-bind-html="vm.selectedHtml"></div>
                 </div>
                 <div class="input-group">
-                    <div class="radio-line" ng-repeat="w in vm.selectedOption.way">
-                        <input class="iCheck" name="iradio4" data-skin="line" data-color="blue" type="radio">
-                        <label>{{w}}</label>
+                    <div class="radio-line" ng-repeat="w in vm.selectedWayHtml">
+                        <input class="icheckbox_flat-blue" name="iradio4" data-skin="line" data-color="blue" type="radio">
+                        <span ng-bind-html="w"></span>
+                        </input>
                     </div>
                 </div>
             </form>
@@ -37,7 +38,8 @@
         <div class="box magic-element col-md-6">
             <form role="form">
                 <div class="form-group">
-                    <textarea rows="3" class="form-control" id="inputTextarea"></textarea>
+                    <textarea ng-model="wm.currentCall.replaceTxt" ng-change="wm.changeReplaceTxt()"
+                        rows="5" class="form-control" id="inputTextarea"></textarea>
                 </div>
             </form>
         </div>
@@ -45,19 +47,19 @@
         <div class="box magic-element col-md-6">
             <form role="form">
                 <div class="controls">
-                    <a class="btn btn-success btn-ion" href="#">
+                    <a class="btn btn-success btn-ion" href="#" ng-click="vm.endCall('success')">
                         <i class="ion-checkmark-round"></i>
                         <span></span>
                     </a>
-                    <a class="btn btn-danger btn-ion" href="#">
+                    <a class="btn btn-danger btn-ion" href="#" ng-click="vm.endCall('fail')">
                         <i class="ion-close-round"></i>
                         <span></span>
                     </a>
-                    <a class="btn btn-warning btn-ion" href="#">
+                    <a class="btn btn-warning btn-ion" href="#" ng-click="vm.endCall('break')">
                         <i class="ion-scissors"></i>
                         <span></span>
                     </a>
-                    <a class="btn btn-info btn-ion" href="#">
+                    <a class="btn btn-info btn-ion" href="#" ng-click="vm.endCall('stuck')">
                         <i class="ion-help"></i>
                         <span></span>
                     </a>
@@ -67,7 +69,7 @@
 
     </div>
     <script type="text/javascript">
-        $('.magic-layout').each(function () {
+        $('.magic-layout').each(function() {
             updateMagic($(this));
         });
     </script>

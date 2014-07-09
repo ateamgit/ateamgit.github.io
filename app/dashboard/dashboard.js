@@ -21,6 +21,9 @@
 
         function getScriptList() {
             return datacontext.getScriptList().then(function (data) {
+                for (var key in data) {
+                    data[key].callCount = datacontext.getCallCount(data[key].callId);
+                }
                 return vm.scriptList = data;
             });
         }

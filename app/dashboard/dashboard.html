@@ -18,8 +18,8 @@
                     <tbody>
                         <tr ng-repeat="scrp in vm.scriptList">
                             <td>{{scrp.name}}</td>
-                            <td class="center">{{scrp.cnt}}</td>
-                            <td class="center"><a ng-href="#scriptcall/{{scrp.id}}">Звонок</a></td>
+                            <td class="center">{{scrp.callCount}}</td>
+                            <td class="center"><a ng-href="#scriptcall/{{scrp.callId}}">Звонок</a></td>
                             <td class="center">Смотреть</td>
                         </tr>
                     </tbody>

@@ -9,8 +9,12 @@
             ScriptList: null,
             getScriptList: getScriptList,
             getScript: getScript,
-            selectScript: selectScript
+            selectScript: selectScript,
+            getCallCount: getCallCount,
+            addCall: addCall
         };
+        service.callCount = 0;
+        service.callGroup = [];
         return service;
 
         function getScriptList() {
@@ -33,10 +37,28 @@
         
         function selectScript(callId) {
             for (var key in this.ScriptList) {
-                if (this.ScriptList[key].id == callId) {
+                if (this.ScriptList[key].callId == callId) {
                     this.selectedScript = this.ScriptList[key];
                     return;
                 }
+            }
+        }
+
+        function getCallCount(callId) {
+            var ctx = this;
+            if (ctx.callGroup[callId] === undefined) {
+                ctx.callGroup[callId] = 0;
+            }
+            return ctx.callGroup[callId];
+        }
+
+        function addCall(currentCall) {
+            var ctx = this;
+            ctx.callCount++;
+            if (ctx.callGroup[currentCall.callId] === undefined) {
+                ctx.callGroup[currentCall.callId] = 0;
+            } else {
+                ctx.callGroup[currentCall.callId]++;
             }
         }
 
@@ -149,6 +171,5 @@
                 t.options = ol;
             }
         }
-
     }
 })();

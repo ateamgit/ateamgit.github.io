@@ -7,15 +7,33 @@
                     <div class="pull-left">
                         <button class="btn btn-flat btn-default" id="dashboard-range">
                             <span class="icon ion-ios7-calendar-outline"></span>
-                            <span class="text-date">Oct 30, 2013 - Nov 29, 2013</span> 
+                            <span class="text-date">Oct 30, 2013 - Nov 29, 2013</span>
                             <b class="caret"></b>
                         </button>
                     </div>
-                </div><!-- /app header -->
+                </div>
+                <!-- /app header -->
                 <div class="widget wviolet">
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
-                        <h3>TODO: Implement Your Features</h3>
+                        <table class="table table-hover datatables">
+                            <thead>
+                                <tr>
+                                    <th>Название сценария</th>
+                                    <th>Кол-во звонков</th>
+                                    <th></th>
+                                    <th>Визуализация сценария</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="scrp in vm.scriptList">
+                                    <td>{{scrp.name}}</td>
+                                    <td class="center">{{scrp.callCount}}</td>
+                                    <td class="center"><a ng-href="#scriptcall/{{scrp.callId}}">Звонок</a></td>
+                                    <td class="center">Смотреть</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="widget-foot">
                         <div class="clearfix"></div>
