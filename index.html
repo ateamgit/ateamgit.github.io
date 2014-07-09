@@ -408,57 +408,11 @@
                   { dates: '2013-11-02', sales: 380 },
                   { dates: '2013-11-03', sales: 655 },
                   { dates: '2013-11-04', sales: 571 }
-              ],
-                  revenueChart = Morris.Line({
-                      element: 'revenue-chart',
-                      data: data1,
-                      lineColors: ['#3498db'],
-                      gridTextColor: '#34495e',
-                      pointFillColors: ['#3498db'],
-                      xkey: 'dates',
-                      ykeys: ['sales'],
-                      labels: ['Sales'],
-                      barRatio: 0.4,
-                      hideHover: 'auto'
-                  }),
-                  salesChart = Morris.Donut({
-                      element: 'sales-chart',
-                      data: [
-                          { label: 'Download Sales', value: 25 },
-                          { label: 'In-Store Sales', value: 40 },
-                          { label: 'Mail-Order Sales', value: 25 },
-                          { label: 'Respond Sales', value: 10 }
-                      ],
-                      colors: ['#f39c12', '#3498db', '#2ecc71', '#e74c3c'],
-                      gridTextColor: '#3498db',
-                      formatter: function (y) { return y + "%"; }
-                  }),
-                  data_items = [
-                      { themes: 'Stilearn', purchase: 136 },
-                      { themes: 'StilMetro', purchase: 137 },
-                      { themes: 'Syrena', purchase: 675 },
-                      { themes: 'Biosia', purchase: 380 },
-                      { themes: 'GlitFlat', purchase: 655 },
-                      { themes: 'Zahra', purchase: 1571 }
-                  ],
-                  itemsChart = Morris.Bar({
-                      element: 'items-chart',
-                      data: data_items,
-                      barColors: ['#3498db'],
-                      gridTextColor: '#34495e',
-                      xkey: 'themes',
-                      ykeys: ['purchase'],
-                      labels: ['Purchase'],
-                      barRatio: 0.4,
-                      xLabelAngle: 30,
-                      hideHover: 'auto'
-                  });
+              ];
 
               // update data on content or window resize
               var update = function() {
-                  revenueChart.redraw();
-                  salesChart.redraw();
-                  itemsChart.redraw();
+
               };
 
               // handle chart responsive on toggle .content
