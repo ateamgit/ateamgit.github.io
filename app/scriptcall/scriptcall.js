@@ -12,7 +12,7 @@
         vm.currentCall.name = '';
         vm.currentCall.callCount = 0;
         vm.currentCall.callWay = [];
-        vm.currentCall.replaceTxt = "Имя ЛПР - Зоя\nназвание компании ";
+        vm.currentCall.replaceTxt = "Имя ЛПР - Зоя\rназвание компании ";
         vm.currentCall.callId = $routeParams.callId;
         
         vm.optionList = [];
