@@ -12,7 +12,7 @@
         vm.currentCall.name = '';
         vm.currentCall.callCount = 0;
         vm.currentCall.callWay = [];
-        vm.currentCall.replaceTxt = "Имя ЛПР - Зоя\rназвание компании ";
+        vm.currentCall.replaceTxt = "Имя ЛПР - Зоя\r\nназвание компании ";
         vm.currentCall.callId = $routeParams.callId;
         
         vm.optionList = [];
@@ -54,10 +54,9 @@
             }
         };
 
-        $scope.changeReplaceTxt = function (txt) {
-            $("#inputTextarea").each(function () {
-                vm.currentCall.replaceTxt = txt;
-            });
+        $scope.changedText = "";
+        $scope.changeReplaceTxt = function () {
+            vm.currentCall.replaceTxt = $scope.changedText;
             vm.selectHtml();
         };
 
@@ -95,11 +94,9 @@
             return datacontext.getScript().then(function (data) {
                 vm.currentCall.name = datacontext.selectedScript.name;
                 vm.currentCall.callCount = datacontext.getCallCount($routeParams.callId) + 1;
-                
-                $("#inputTextarea").each(function () {
-                    $(this).text(vm.currentCall.replaceTxt);
-                });
 
+                $scope.changedText = vm.currentCall.replaceTxt;
+                
                 vm.selectedOption = data[0];
                 vm.selectHtml();
                 return vm.optionList = data;
