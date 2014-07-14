@@ -146,6 +146,10 @@
             var c = data.indexOf('>') + 1;
             var id = data.substr(a, b - a);
             var name = data.substr(c).trim();
+            if (name.length > 0 && name[name.length - 1] == '"')
+                name = name.substr(0, name.length - 1);
+            if (name.length > 0 && name[0] == '"')
+                name = name.substr(1);
             return { id: id, name: name };
         }
 
